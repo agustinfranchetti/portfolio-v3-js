@@ -41,13 +41,13 @@ export const rowIconsDict = {
     resume:
       "https://cdn2.iconfinder.com/data/icons/apple-ios7-icons/118/notes_ios7_ios_7.png",
   };
-  
+
   export const iconLinksDict = {
     linkedin: "https://www.linkedin.com/in/agustinfranchetti/",
     github: "https://github.com/agustinfranchetti",
     twitter: "https://twitter.com/franchoDev",
     instagram: "https://www.instagram.com/agustinfranchetti/",
-    location: "https://goo.gl/maps/6Z5Z9Z9Z9Z9Z9Z9Z9",
+    location: "https://maps.app.goo.gl/RCgGNTJzQK569CKo7?g_st=ic",
     discord: "https://discord.gg/franchomister#1996",
     phone: "tel:+5492611234567",
     email: "mailto: agustinfranchetti@gmail.com",
