@@ -45,8 +45,8 @@ const IconsRow = ({ rowNumber }) => {
 export const MobileDisplay = () => {
   return (
     <Box
-      width="100%"
-      height="100%"
+      width="100vw"
+      height="100vh"
       backgroundImage={"url(https://wallpaperaccess.com/full/8298140.jpg)"}
       backgroundSize="cover"
       backgroundPosition="center"
