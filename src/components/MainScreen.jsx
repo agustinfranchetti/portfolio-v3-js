@@ -1,7 +1,7 @@
 import React, { useState, createContext } from "react";
 import { PortfolioTerminal } from "./PortfolioTerminal";
 import { Button, Box, Flex } from "@chakra-ui/react";
-import { AboutMe } from "./aboutMe/Aboutme";
+import { AboutMe } from "./aboutMe/AboutMe";
 import { FinderWindow } from "./finderWindow/FinderWindow";
 
 const ShowcontentButton = ({ iconLabel, showVariable, setShowVariable }) => {
