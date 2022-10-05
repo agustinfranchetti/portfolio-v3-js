@@ -21,7 +21,7 @@ export const AboutMe = () => {
       alignItems="center"
       justifyContent={{ base: "center", md: "flex-start" }}
       backgroundColor="gray.800"
-      borderRadius="10px"
+      borderRadius="15px"
       mt={{ base: "10px", md: "20px" }}
       ml={{ base: "0px", md: "20px" }}
       p={{ base: "0px", md: "20px" }}
