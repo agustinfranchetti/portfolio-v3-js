@@ -13,9 +13,12 @@ import { PortfolioTerminal } from "./PortfolioTerminal";
 import { FinderWindow } from "./FinderWindow";
 
 const buttonMacIconDict = {
-  terminal: "https://img.icons8.com/ios-filled/50/000000/mac-os-terminal.png",
-  socialMedia: "https://img.icons8.com/ios-filled/50/000000/mac-os-safari.png",
-  finder: "src/assets/finder.png",
+  terminal:
+    "https://res.cloudinary.com/dw4okqkrq/image/upload/v1665098778/portfolio-macos-ios/terminal_hbdjv9.png",
+  socialMedia:
+    "https://res.cloudinary.com/dw4okqkrq/image/upload/v1665098778/portfolio-macos-ios/socialMedia_oek3wk.png",
+  finder:
+    "https://res.cloudinary.com/dw4okqkrq/image/upload/v1665098778/portfolio-macos-ios/finder_qe55ze.png",
 };
 
 const ShowcontentButton = ({ iconLabel, showVariable, setShowVariable }) => {
@@ -31,7 +34,7 @@ const ShowcontentButton = ({ iconLabel, showVariable, setShowVariable }) => {
     >
       <Image
         w={"80px"}
-        src={`src/assets/icons/${iconLabel}.png`}
+        src={buttonMacIconDict[iconLabel]}
         onClick={() => setShowVariable(!showVariable)}
       />
     </Flex>
