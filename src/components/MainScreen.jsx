@@ -1,8 +1,13 @@
 import React from "react";
-import { DesktopDisplay } from "./displays/DesktopDisplay";
-import { MobileDisplay } from "./displays/MobileDisplay";
+import { DesktopDisplay } from "./desktop/DesktopDisplay";
+import { MobileDisplay } from "./mobile/MobileDisplay";
+import { useBreakpointValue } from "@chakra-ui/react";
 
 export const MainScreen = () => {
-  const isMobile = window.innerWidth < 600;
-  return isMobile ? <MobileDisplay /> : <DesktopDisplay />;
+  const deviceType = useBreakpointValue({
+    base: "mobile",
+    md: "smallTablet",
+    lg: "desktop",
+  });
+  return deviceType === "desktop" ? <DesktopDisplay /> : <MobileDisplay />;
 };

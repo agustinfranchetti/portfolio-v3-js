@@ -1,6 +1,6 @@
 import React from "react";
-import { MobileAboutMe } from "../aboutMe/AboutMe";
-import { Box, Text, Grid, Button, Flex, Stack } from "@chakra-ui/react";
+import { Box, Text, Grid, Button, Flex, Stack, Spacer } from "@chakra-ui/react";
+import { MobileAboutMe } from "./MobileAboutMe";
 import {
   rowIconsDict,
   iconLinksDict,
@@ -36,7 +36,10 @@ const IconsRow = ({ rowNumber }) => {
       alignItems={"space-between"}
     >
       {Object.keys(rowIconsDict[rowNumber]).map((key) => (
-        <IconRowButton label={rowIconsDict[rowNumber][key]} />
+        <IconRowButton
+          key={`icon ${rowIconsDict[rowNumber]}` + key}
+          label={rowIconsDict[rowNumber][key]}
+        />
       ))}
     </Flex>
   );
@@ -46,24 +49,24 @@ export const MobileDisplay = () => {
   return (
     <Box
       width="100vw"
-      height="100vh"
+      height="100%"
       backgroundImage={"url(https://wallpaperaccess.com/full/8298140.jpg)"}
       backgroundSize="cover"
       backgroundPosition="center"
     >
       <MobileAboutMe />
       <Grid
-        templateRows="repeat(5, 1fr)"
+        templateRows="repeat(4, 1fr)"
+        height={"60vh"}
+        width={"90%"}
         // backgroundColor="red"
-        mx={5}
         my={2.5}
-        height="fit-content"
+        mx={"5%"}
         gap={2}
       >
         <IconsRow rowNumber={1} />
         <IconsRow rowNumber={2} />
-        <Grid />
-        <Grid />
+        <Spacer />
         <IconsRow rowNumber={3} />
       </Grid>
     </Box>
