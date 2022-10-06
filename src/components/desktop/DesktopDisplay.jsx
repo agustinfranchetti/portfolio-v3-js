@@ -42,7 +42,7 @@ const ShowcontentButton = ({ iconLabel, showVariable, setShowVariable }) => {
 };
 
 export const DesktopDisplay = () => {
-  const [showTerminal, setShowTerminal] = useState(false);
+  const [showTerminal, setShowTerminal] = useState(true);
   const [showSocialMedia, setShowSocialMedia] = useState(false);
   const [showFinder, setShowFinder] = useState(false);
 
