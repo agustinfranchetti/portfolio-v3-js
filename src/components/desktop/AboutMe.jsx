@@ -3,7 +3,7 @@ import { Image, Box, Stack, Heading, Text, Center } from "@chakra-ui/react";
 export const AboutMe = () => {
   return (
     <Box
-      width={{ base: "90%", md: "90%", lg: "40%" }}
+      width={{ base: "90%", md: "90%", lg: "35%" }}
       height={{ base: "160px", md: "200px", lg: "220px" }}
       display="flex"
       alignItems="center"

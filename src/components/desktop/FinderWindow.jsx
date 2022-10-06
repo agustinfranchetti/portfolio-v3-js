@@ -9,7 +9,10 @@ export const FinderWindow = () => {
       backgroundColor="white"
       borderRadius="10px"
       padding="10px"
-      boxShadow="xl"
+      mr={"200px"}
+      boxShadow="dark-lg"
+      position={"absolute"}
+      zIndex={2}
     />
   );
 };

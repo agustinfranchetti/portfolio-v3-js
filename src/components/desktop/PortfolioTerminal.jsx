@@ -7,7 +7,7 @@ import { useTerminalCommandsHook } from "../../utils/useTerminalCommandsHook";
 export const PortfolioTerminal = () => {
   const { terminalOutput, handleTerminalInput } = useTerminalCommandsHook();
   return (
-    <Box w={"800px"}>
+    <Box w={"80%"} zIndex={1} boxShadow={"dark-lg"}>
       <Terminal
         name="~/agustin_franchetti/portfolio"
         onInput={(terminalInput) => handleTerminalInput(terminalInput)}

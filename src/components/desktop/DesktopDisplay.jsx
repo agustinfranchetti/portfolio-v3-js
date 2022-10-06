@@ -1,57 +1,102 @@
 import React, { useState } from "react";
-import { Button, Box, Flex } from "@chakra-ui/react";
+import {
+  Button,
+  Box,
+  Flex,
+  Grid,
+  GridItem,
+  Stack,
+  Image,
+} from "@chakra-ui/react";
 import { AboutMe } from "./AboutMe";
 import { PortfolioTerminal } from "./PortfolioTerminal";
 import { FinderWindow } from "./FinderWindow";
 
+const buttonMacIconDict = {
+  terminal: "https://img.icons8.com/ios-filled/50/000000/mac-os-terminal.png",
+  socialMedia: "https://img.icons8.com/ios-filled/50/000000/mac-os-safari.png",
+  finder: "src/assets/finder.png",
+};
+
 const ShowcontentButton = ({ iconLabel, showVariable, setShowVariable }) => {
   return (
-    <Button
-      colorScheme="whiteAlpha"
-      variant="solid"
-      onClick={() => setShowVariable(!showVariable)}
-      mb="10px"
+    <Flex
+      direction={"row"}
+      borderRadius="10px"
+      p="10px"
+      alignItems="center"
+      justifyContent="flex-start"
+      _hover={{ backgroundColor: "whiteAlpha.200" }}
+      backgroundColor={showVariable ? "whiteAlpha.200" : null}
     >
-      {showVariable ? "Hide" : "Show"} {iconLabel}
-    </Button>
+      <Image
+        w={"80px"}
+        src={`src/assets/icons/${iconLabel}.png`}
+        onClick={() => setShowVariable(!showVariable)}
+      />
+    </Flex>
   );
 };
 
 export const DesktopDisplay = () => {
   const [showTerminal, setShowTerminal] = useState(false);
   const [showSocialMedia, setShowSocialMedia] = useState(false);
+  const [showFinder, setShowFinder] = useState(false);
 
   return (
-    <Box
-      width="100vw"
-      height="100vh"
+    <Grid
+      h="100vh"
+      w="100vw"
+      templateRows="repeat(5, 1fr)"
+      templateColumns="repeat(6, 1fr)"
+      gap={4}
       backgroundImage={
         "url(https://512pixels.net/downloads/macos-wallpapers/11-0-Color-Day.jpg)"
       }
       backgroundSize="cover"
       backgroundPosition="center"
-      position={"absolute"}
     >
-      <AboutMe />
-      <Flex
-        width="100%"
-        height="100%"
-        alignItems="center"
-        justifyContent="center"
-      >
-        <ShowcontentButton
-          iconLabel="terminal"
-          showVariable={showTerminal}
-          setShowVariable={setShowTerminal}
-        />
-        <ShowcontentButton
-          iconLabel="social media"
-          showVariable={showSocialMedia}
-          setShowVariable={setShowSocialMedia}
-        />
-        {showTerminal && <PortfolioTerminal />}
+      <GridItem rowSpan={5} colSpan={2} my={"auto"}>
+        {/* <AboutMe /> */}
+        <Stack
+          width="fit-content"
+          backgroundColor={"whiteAlpha.400"}
+          borderRadius="10px"
+          justifyContent={"center"}
+        >
+          <ShowcontentButton
+            iconLabel="terminal"
+            showVariable={showTerminal}
+            setShowVariable={setShowTerminal}
+          />
+          <ShowcontentButton
+            iconLabel="socialMedia"
+            showVariable={showSocialMedia}
+            setShowVariable={setShowSocialMedia}
+          />
+          <ShowcontentButton
+            iconLabel="finder"
+            showVariable={showFinder}
+            setShowVariable={setShowFinder}
+          />
+        </Stack>
+      </GridItem>
+      <GridItem rowSpan={1} colSpan={4}>
         {showSocialMedia && <FinderWindow />}
-      </Flex>
-    </Box>
+      </GridItem>
+      <GridItem
+        rowSpan={3}
+        colSpan={4}
+        justifyContent="center"
+        alignItems="center"
+        display="flex"
+      >
+        {showTerminal && <PortfolioTerminal />}
+        {showFinder && <FinderWindow />}
+      </GridItem>
+      <GridItem colSpan={2}></GridItem>
+      <GridItem colSpan={2} />
+      <GridItem colSpan={4} />
+    </Grid>
   );
 };
