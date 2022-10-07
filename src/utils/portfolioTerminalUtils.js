@@ -1,7 +1,8 @@
 export const welcomeText = `
 Hi, im agustin, a software developer from argentina.
 I like to code in react, nodejs, and python.
-I also like to play videogames, watch anime, and read manga.
+I also like to play videogames, read manga, and learn about
+space, blockchain, and AI.
 `;
 
 export const commandsText = `
