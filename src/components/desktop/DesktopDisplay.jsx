@@ -46,10 +46,6 @@ export const DesktopDisplay = () => {
     finder: 0,
   });
 
-  useEffect(() => {
-    console.log(zIndexes);
-  }, [zIndexes]);
-
   const handleSetAsTopScreen = (screen) => {
     const newZIndexes = { ...zIndexes };
     const highestZIndex = Math.max(...Object.values(newZIndexes));
