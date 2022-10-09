@@ -17,6 +17,8 @@ export const PortfolioTerminal = () => {
       boxShadow={"dark-lg"}
       zIndex={zIndexes["terminal"]}
       onClick={() => handleSetAsTopScreen("terminal")}
+      resize="both"
+      overflow={"auto"}
     >
       <Terminal
         name="~/agustin_franchetti/portfolio"

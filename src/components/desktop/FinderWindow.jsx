@@ -20,6 +20,8 @@ export const FinderWindow = () => {
       position={"absolute"}
       zIndex={zIndexes["finder"]}
       onClick={() => handleSetAsTopScreen("finder")}
+      resize="both"
+      overflow={"auto"}
     />
   );
 };

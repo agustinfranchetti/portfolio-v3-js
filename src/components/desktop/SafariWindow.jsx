@@ -21,6 +21,8 @@ export const SafariWindow = () => {
       position={"absolute"}
       zIndex={zIndexes["safari"]}
       onClick={() => handleSetAsTopScreen("safari")}
+      resize="both"
+      overflow={"auto"}
     />
   );
 };
