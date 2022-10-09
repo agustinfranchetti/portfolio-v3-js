@@ -50,7 +50,9 @@ export const MobileDisplay = () => {
     <Box
       width="100vw"
       height="100vh"
-      backgroundImage={"url(https://wallpaperaccess.com/full/8298140.jpg)"}
+      backgroundImage={
+        "url(https://res.cloudinary.com/dw4okqkrq/image/upload/v1665277524/portfolio-macos-ios/8298140_jkgb9m.webp)"
+      }
       backgroundSize="cover"
       backgroundPosition="center"
     >
