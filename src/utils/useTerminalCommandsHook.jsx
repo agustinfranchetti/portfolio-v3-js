@@ -4,6 +4,7 @@ import {
   welcomeText,
   commandsText,
   socialsLinks,
+  resumeLinks,
 } from "./portfolioTerminalUtils";
 import { Link } from "@chakra-ui/react";
 
@@ -42,9 +43,12 @@ export const useTerminalCommandsHook = () => {
         ...prev,
         <TerminalInput>{input}</TerminalInput>,
         <TerminalOutput>
-          <Link href="https://drive.google.com/file/d/1Zv1sZdU6ZQ2QG8W8OwJz2fK6z1OzJ1eZ/view?usp=sharing">
-            Resume
-          </Link>
+          {resumeLinks.map((link) => (
+            <Link fontWeight={"bold"} color={"twitter.500"} href={link.url}>
+              {link.download_text}
+              {"\u000A"}
+            </Link>
+          ))}
         </TerminalOutput>,
       ]);
     } else if (input === "clear") {

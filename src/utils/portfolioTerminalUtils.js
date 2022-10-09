@@ -35,3 +35,14 @@ export const socialsLinks = [
     url: "mailto: agustinfranchetti@gmail.com",
   },
 ];
+
+export const resumeLinks = [
+  {
+    download_text: "click para ver en español",
+    url: "https://drive.google.com/file/d/1-71urLTINOT-UwZMkmekDXWqcPIH_FP-/view?usp=sharing",
+  },
+  {
+    download_text: "click to view in english",
+    url: "https://drive.google.com/file/d/1Qf8oPmgVsJG39zWvm0Uuv3-7NyqXyR6y/view?usp=sharing",
+  },
+];
