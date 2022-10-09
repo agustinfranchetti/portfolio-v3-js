@@ -71,7 +71,7 @@ export const DesktopDisplay = () => {
         templateColumns="repeat(6, 1fr)"
         gap={4}
         backgroundImage={
-          "url(https://512pixels.net/downloads/macos-wallpapers/11-0-Color-Day.jpg)"
+          "url(https://res.cloudinary.com/dw4okqkrq/image/upload/v1665277437/portfolio-macos-ios/11-0-Color-Day_1_kikk1d.webp)"
         }
         backgroundSize="cover"
         backgroundPosition="center"
