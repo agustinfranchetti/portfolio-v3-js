@@ -32,6 +32,7 @@ export const SafariWindow = () => {
       onClick={() => handleSetAsTopScreen("safari")}
       resize="both"
       overflow={"auto"}
+      p={5}
     >
       <FormControl id="email">
         <Heading as="h1" size="lg" mb={"10px"}>
