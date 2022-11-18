@@ -1,6 +1,6 @@
 import React, { useEffect, useContext } from "react";
 import { DesktopContext } from "./DesktopDisplay";
-import { FaCircle, FaDotCircle } from "react-icons/fa";
+import { FaCircle } from "react-icons/fa";
 import {
   Box,
   FormControl,
