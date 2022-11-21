@@ -1,8 +1,9 @@
 import React, { useEffect, useContext } from "react";
 import { DesktopContext } from "./DesktopDisplay";
-import { Box } from "@chakra-ui/react";
+import { Box, Flex } from "@chakra-ui/react";
 import { GithubRepoCard } from "./GithubRepoCard";
 import { SiTypescript, SiSwift, SiReact, SiFirebase } from "react-icons/si";
+import { FaCircle } from "react-icons/fa";
 
 export const FinderWindow = () => {
   const { zIndexes, handleSetAsTopScreen } = useContext(DesktopContext);
@@ -28,6 +29,17 @@ export const FinderWindow = () => {
       flexDir={"column"}
       display={"flex"}
     >
+      <Flex
+        justifyContent="flex-start"
+        alignItems="center"
+        direction={"row"}
+        gap={2}
+        mb={5}
+      >
+        <FaCircle color="#d9515d" size={16} />
+        <FaCircle color="#f4c025" size={16} />
+        <FaCircle color="#3fc930" size={16} />
+      </Flex>
       <GithubRepoCard
         repoSubPath="snapshot-fronted"
         repoName="Snapshot Frontend"
