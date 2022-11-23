@@ -39,7 +39,7 @@ export const SafariWindow = () => {
   return (
     <Box
       width="600px"
-      height="520px"
+      height="420px"
       backgroundColor="#f4f5f7"
       borderRadius="10px"
       mt={"30px"}
@@ -93,8 +93,16 @@ export const SafariWindow = () => {
               {({ field, form }) => (
                 <FormControl isInvalid={form.errors.name && form.touched.name}>
                   <FormLabel>Full name</FormLabel>
-                  <Input {...field} id="name" placeholder="name" />
+                  <Input {...field} id="name" />
                   <FormErrorMessage>{form.errors.name}</FormErrorMessage>
+                </FormControl>
+              )}
+            </Field>
+            <Field name="subject">
+              {({ field, form }) => (
+                <FormControl defaultValue="Portfolio Contact">
+                  <FormLabel>Subject</FormLabel>
+                  <Input {...field} id="subject" />
                 </FormControl>
               )}
             </Field>
@@ -104,7 +112,7 @@ export const SafariWindow = () => {
                   isInvalid={form.errors.email && form.touched.email}
                 >
                   <FormLabel>Email address</FormLabel>
-                  <Input {...field} id="email" placeholder="email" />
+                  <Input {...field} id="email" />
                   <FormErrorMessage>{form.errors.email}</FormErrorMessage>
                 </FormControl>
               )}
@@ -115,17 +123,7 @@ export const SafariWindow = () => {
                   isInvalid={form.errors.message && form.touched.message}
                 >
                   <FormLabel>Message</FormLabel>
-                  <Input
-                    {...field}
-                    id="message"
-                    placeholder="message"
-                    h={"100px"}
-                    _placeholder={{
-                      alignContent: "flex-start",
-                      position: "absolute",
-                      top: "10%",
-                    }}
-                  />
+                  <Input {...field} id="message" />
                   <FormErrorMessage>{form.errors.message}</FormErrorMessage>
                 </FormControl>
               )}
