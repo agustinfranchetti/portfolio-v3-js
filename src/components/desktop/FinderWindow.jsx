@@ -2,7 +2,7 @@ import React, { useEffect, useContext } from "react";
 import { DesktopContext } from "./DesktopDisplay";
 import { Box, Flex } from "@chakra-ui/react";
 import { GithubRepoCard } from "./GithubRepoCard";
-import { SiTypescript, SiSwift, SiReact, SiFirebase } from "react-icons/si";
+import { SiTypescript, SiSwift, SiReact, SiFirebase, SiJavascript } from "react-icons/si";
 import { FaCircle } from "react-icons/fa";
 
 export const FinderWindow = () => {
@@ -41,20 +41,28 @@ export const FinderWindow = () => {
         <FaCircle color="#3fc930" size={16} />
       </Flex>
       <GithubRepoCard
-        repoSubPath="snapshot-fronted"
+        repoSubPath="snapshot-frontend"
         repoName="Snapshot Frontend"
         repoDescription="Bereal web3 polygon clone - frontend"
       >
-        <SiTypescript color="#3178c6" size={24} />
-        <SiReact color="#61dafb" size={24} />
+        <SiTypescript color="#3178c6" size={30} />
+        <SiReact color="#61dafb" size={30} />
       </GithubRepoCard>
       <GithubRepoCard
         repoSubPath="franChat"
         repoName="FranChat"
         repoDescription="IOS chat app using firebase for storing messages"
       >
-        <SiSwift color="#ffac45" size={24} />
-        <SiFirebase color="#ffca28" size={24} />
+        <SiSwift color="#ffac45" size={30} />
+        <SiFirebase color="#ffca28" size={30} />
+      </GithubRepoCard>
+      <GithubRepoCard
+        repoSubPath="portfolio-v3-js"
+        repoName="Portfolio V3"
+        repoDescription="My portfolio website - frontend"
+      >
+        <SiJavascript color="#f7df1e" size={30} />
+        <SiReact color="#61dafb" size={30} />
       </GithubRepoCard>
     </Box>
   );

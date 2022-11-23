@@ -1,4 +1,5 @@
-import { Box, Flex, Text } from "@chakra-ui/react";
+import { Box, Flex, Text, Link, Icon } from "@chakra-ui/react";
+import { FiExternalLink } from "react-icons/fi";
 
 export const GithubRepoCard = ({
   repoSubPath,
@@ -19,14 +20,17 @@ export const GithubRepoCard = ({
       display={"flex"}
     >
       <Flex direction={"column"}>
-        <Text
+        <Link fontSize={"lg"} fontWeight={"bold"} href={`https://github.com/agustinfranchetti/${repoSubPath}`} isExternal>
+          {repoName} <Icon as={FiExternalLink} />
+        </Link>
+        {/* <Text
           typeof="link"
           href={`github.com/agustinfranchetti/${repoSubPath}`}
           fontSize={"lg"}
           fontWeight="bold"
         >
           {repoName}
-        </Text>
+        </Text> */}
         <Text fontSize="sm" color="gray.500">
           {repoDescription}
         </Text>
