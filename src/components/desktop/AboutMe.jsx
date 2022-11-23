@@ -19,7 +19,7 @@ export const AboutMe = () => {
         boxSize={{ base: "120px", md: "160px", lg: "180px" }}
         objectFit={"cover"}
         src={
-          "https://pbs.twimg.com/profile_images/1540755135281762311/hin9KxPj_400x400.jpg"
+          "https://res.cloudinary.com/dw4okqkrq/image/upload/v1669238264/portfolio-macos-ios/4CF5F7A5-6041-43BB-A688-07A504EBE7EC-_1__zeu8vr.webp"
         }
         alt={"Author"}
       />
