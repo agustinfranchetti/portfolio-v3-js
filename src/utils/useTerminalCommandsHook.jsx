@@ -5,12 +5,13 @@ import {
   commandsText,
   socialsLinks,
   resumeLinks,
+  psText,
 } from "./portfolioTerminalUtils";
 import { Link } from "@chakra-ui/react";
 
 export const useTerminalCommandsHook = () => {
   const [terminalOutput, setTerminalOutput] = useState([
-    <TerminalOutput> {welcomeText + commandsText} </TerminalOutput>,
+    <TerminalOutput> {welcomeText + commandsText + psText} </TerminalOutput>,
   ]);
 
   const handleTerminalInput = (input) => {

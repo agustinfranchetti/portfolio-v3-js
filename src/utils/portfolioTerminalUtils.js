@@ -13,6 +13,10 @@ Here are some useful commands:
 - clear: clears the terminal
 `;
 
+export const psText = `
+Try visiting this website from a mobile device 👀
+`;
+
 export const socialsLinks = [
   {
     label: "github",
