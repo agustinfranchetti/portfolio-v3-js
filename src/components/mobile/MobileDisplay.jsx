@@ -10,21 +10,20 @@ const IconRowButton = ({ label }) => {
   return (
     <Stack textAlign={"center"}>
       <Link
-        href={iconLinksDict[label]}
+        href={label ? iconLinksDict[label] : null}
         isExternal
       >
       <Button
         colorScheme="whiteAlpha"
-        variant="ghost"
-        // onClick={() => window.open(iconLinksDict[label])}
+        variant={label ? "solid" : "ghost"}
         h="16"
         w="16"
-        bgImage={`url(${iconIconsDict[label]})`}
+        bgImage={label ? `url(${iconIconsDict[label]})` : null}
         bgSize="cover"
         bgPosition="center"
         borderRadius={"15px"}
         _hover={{
-          bg: `url(${iconIconsDict[label]})`,
+          bg: label ? `url(${iconIconsDict[label]})` : null,
           bgSize: "cover",
         }}
       />
