@@ -25,7 +25,7 @@ export const SafariWindow = () => {
 
   const sendEmail = (values) => {
     emailjs
-      .send(process.env.MAIL_SERVICE_KEY, process.env.MAIL_TEMPLATE_KEY, values, process.env.MAIL_API_KEY)
+      .send("service_ntakxl8", "template_lne0wod", values, "FKU7zdqCrF6-wm6WA")
       .then(
         (result) => {
           console.log(result.text);
