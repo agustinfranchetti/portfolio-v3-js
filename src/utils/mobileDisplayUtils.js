@@ -48,7 +48,7 @@ export const rowIconsDict = {
     twitter: "https://twitter.com/franchoDev",
     instagram: "https://www.instagram.com/agustinfranchetti/",
     location: "https://maps.app.goo.gl/RCgGNTJzQK569CKo7?g_st=ic",
-    discord: "https://discord.com/channels/@me/248162868854259713",
+    discord: "https://discord.com/users/@me/248162868854259713",
     phone: "tel:+5492611234567",
     email: "mailto: agustinfranchetti@gmail.com",
     telegram: "https://t.me/agusfranchetti",
