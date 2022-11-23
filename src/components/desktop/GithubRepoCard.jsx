@@ -1,4 +1,5 @@
 import { Box, Flex, Text } from "@chakra-ui/react";
+
 export const GithubRepoCard = ({
   repoSubPath,
   repoName,
