@@ -48,10 +48,10 @@ export const rowIconsDict = {
     twitter: "https://twitter.com/franchoDev",
     instagram: "https://www.instagram.com/agustinfranchetti/",
     location: "https://maps.app.goo.gl/RCgGNTJzQK569CKo7?g_st=ic",
-    discord: "https://discord.gg/franchomister#1996",
+    discord: "https://discord.com/channels/@me/248162868854259713",
     phone: "tel:+5492611234567",
     email: "mailto: agustinfranchetti@gmail.com",
     telegram: "https://t.me/agusfranchetti",
     resume:
-      "https://drive.google.com/file/d/1Zv1sZdU6ZQ2QG8W8OwJz2fK6z1OzJ1eZ/view?usp=sharing",
+      "https://drive.google.com/file/d/1Qf8oPmgVsJG39zWvm0Uuv3-7NyqXyR6y/view?usp=sharing",
   };
