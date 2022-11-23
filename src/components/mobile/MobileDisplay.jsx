@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Text, Grid, Button, Flex, Stack, Spacer } from "@chakra-ui/react";
+import { Box, Text, Grid, Button, Flex, Stack, Spacer, Link } from "@chakra-ui/react";
 import { MobileAboutMe } from "./MobileAboutMe";
 import {
   rowIconsDict,
@@ -9,17 +9,26 @@ import {
 const IconRowButton = ({ label }) => {
   return (
     <Stack textAlign={"center"}>
+      <Link
+        href={iconLinksDict[label]}
+        isExternal
+      >
       <Button
         colorScheme="whiteAlpha"
         variant="ghost"
-        onClick={() => window.open(iconLinksDict[label], "_blank")}
+        // onClick={() => window.open(iconLinksDict[label])}
         h="16"
         w="16"
         bgImage={`url(${iconIconsDict[label]})`}
         bgSize="cover"
         bgPosition="center"
         borderRadius={"15px"}
+        _hover={{
+          bg: `url(${iconIconsDict[label]})`,
+          bgSize: "cover",
+        }}
       />
+      </Link>
       <Text color={"white"} fontSize={"sm"}>
         {label}
       </Text>
