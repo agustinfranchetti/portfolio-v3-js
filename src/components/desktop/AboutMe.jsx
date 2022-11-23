@@ -8,7 +8,7 @@ export const AboutMe = () => {
       display="flex"
       alignItems="center"
       justifyContent={{ base: "center", md: "center", lg: "flex-start" }}
-      backgroundColor="gray.800"
+      backgroundColor="whiteAlpha.900"
       borderRadius="15px"
       mt={{ base: "10px", md: "10px", lg: "20px" }}
       ml={{ base: "0px", md: "0px", lg: "20px" }}
@@ -28,7 +28,7 @@ export const AboutMe = () => {
           fontSize={{ base: "lg", md: "xl", lg: "2xl" }}
           fontFamily={"body"}
         >
-          <Text as={"span"} color={"white"}>
+          <Text as={"span"} color={"gray.800"}>
             Agustin Franchetti
           </Text>
         </Heading>
