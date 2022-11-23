@@ -9,10 +9,10 @@ const buttonMacIconDict = {
   terminal:
     "https://res.cloudinary.com/dw4okqkrq/image/upload/v1665098778/portfolio-macos-ios/terminal_hbdjv9.png",
   socialMedia:
-    "https://res.cloudinary.com/dw4okqkrq/image/upload/v1665098778/portfolio-macos-ios/socialMedia_oek3wk.png",
+    "https://res.cloudinary.com/dw4okqkrq/image/upload/v1669236648/portfolio-macos-ios/02cd7ad94a71a0097ae1d9ee12eb1519_Mail_512x512x32_w1sw7y.webp",
   finder:
-    "https://res.cloudinary.com/dw4okqkrq/image/upload/v1665098778/portfolio-macos-ios/finder_qe55ze.png",
-};
+    "https://res.cloudinary.com/dw4okqkrq/image/upload/v1669236851/portfolio-macos-ios/ea5080d827c0e306fc9f7233ea45cb1e_Github_Desktop_512x512x32_caoaan.webp",
+  };
 
 export const DesktopContext = createContext({});
 

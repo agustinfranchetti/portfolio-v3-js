@@ -15,7 +15,7 @@ export const FinderWindow = () => {
     <Box
       width="600px"
       height="400px"
-      backgroundColor="gray.500"
+      backgroundColor="white"
       borderRadius="10px"
       padding="10px"
       mr={"200px"}

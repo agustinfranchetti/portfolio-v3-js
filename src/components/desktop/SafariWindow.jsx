@@ -42,14 +42,14 @@ export const SafariWindow = () => {
       height="420px"
       backgroundColor="#f4f5f7"
       borderRadius="10px"
-      mt={"30px"}
+      mt={"100px"}
       mr={"200px"}
       boxShadow="dark-lg"
       position={"absolute"}
       zIndex={zIndexes["safari"]}
       onClick={() => handleSetAsTopScreen("safari")}
-      resize="both"
-      overflow={"auto"}
+      // resize="horizontal"
+      // overflow={"auto"}
       px={5}
       pt={5}
     >
