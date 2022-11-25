@@ -17,21 +17,14 @@ export const MailWindow = () => {
     handleSetAsTopScreen("mail");
   }, []);
 
-  const handleSendEmail = ({ success }) => {
-    if (success) {
-      setButtonLoading(false);
-      setButtonError(false);
-      setButtonSuccess(true);
-    } else {
-      setButtonLoading(false);
-      setButtonError(true);
-      setButtonSuccess(false);
-    }
-  };
-
   const sendEmail = (values) => {
     emailjs
-      .send("service_ntakxl8", "template_lne0wod", values, "FKU7zdqCrF6-wm6WA")
+      .send(
+        import.meta.env["VITE_MAIL_SERVICE_ID"],
+        import.meta.env["VITE_MAIL_TEMPLATE_ID"],
+        values,
+        import.meta.env["VITE_MAIL_USER_ID"]
+      )
       .then(
         (result) => {
           console.log(result.text);
@@ -42,6 +35,18 @@ export const MailWindow = () => {
           handleSendEmail({ success: false });
         }
       );
+  };
+
+  const handleSendEmail = ({ success }) => {
+    if (success) {
+      setButtonLoading(false);
+      setButtonError(false);
+      setButtonSuccess(true);
+    } else {
+      setButtonLoading(false);
+      setButtonError(true);
+      setButtonSuccess(false);
+    }
   };
 
   return (
