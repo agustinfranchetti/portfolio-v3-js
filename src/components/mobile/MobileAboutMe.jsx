@@ -1,4 +1,4 @@
-import { AboutMe } from "../desktop/AboutMe";
+import { AboutMe } from "./AboutMe";
 import { Box, Center, Text } from "@chakra-ui/react";
 
 export const MobileAboutMe = () => {

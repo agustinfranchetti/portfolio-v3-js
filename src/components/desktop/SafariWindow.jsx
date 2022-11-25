@@ -1,27 +1,29 @@
 import React, { useEffect, useContext } from "react";
 import { DesktopContext } from "./DesktopDisplay";
-import { FaCircle } from "react-icons/fa";
 import {
   Box,
   FormControl,
   FormLabel,
-  FormErrorMessage,
   Input,
-  Heading,
   Button,
   Flex,
+  Text,
+  Spinner,
 } from "@chakra-ui/react";
 import emailjs from "emailjs-com";
 import { Formik, Form, Field } from "formik";
+import { TaskbarButtons } from "./TaskbarButtons";
 
 export const SafariWindow = () => {
-  const { zIndexes, handleSetAsTopScreen } = useContext(DesktopContext);
+  const [buttonSuccess, setButtonSuccess] = React.useState(false);
+  const [buttonError, setButtonError] = React.useState(false);
+  const [buttonLoading, setButtonLoading] = React.useState(false);
+  const { zIndexes, handleSetAsTopScreen, setShowSocialMedia } =
+    useContext(DesktopContext);
 
   useEffect(() => {
     handleSetAsTopScreen("safari");
   }, []);
-
-  //acces .env variables
 
   const sendEmail = (values) => {
     emailjs
@@ -29,9 +31,15 @@ export const SafariWindow = () => {
       .then(
         (result) => {
           console.log(result.text);
+          setButtonLoading(false);
+          setButtonError(false);
+          setButtonSuccess(true);
         },
         (error) => {
           console.log(error.text);
+          setButtonLoading(false);
+          setButtonSuccess(false);
+          setButtonError(true);
         }
       );
   };
@@ -48,23 +56,10 @@ export const SafariWindow = () => {
       position={"absolute"}
       zIndex={zIndexes["safari"]}
       onClick={() => handleSetAsTopScreen("safari")}
-      // resize="horizontal"
-      // overflow={"auto"}
-      px={5}
-      pt={5}
+      pl={2}
+      pt={2}
     >
-      <Flex
-        justifyContent="flex-start"
-        alignItems="center"
-        direction={"row"}
-        gap={2}
-        mt={-2}
-        mb={5}
-      >
-        <FaCircle color="#d9515d" size={16} />
-        <FaCircle color="#f4c025" size={16} />
-        <FaCircle color="#3fc930" size={16} />
-      </Flex>
+      <TaskbarButtons setWindowOpenFunction={setShowSocialMedia} />
       <Formik
         initialValues={{ name: "", email: "", message: "" }}
         validate={(values) => {
@@ -81,63 +76,105 @@ export const SafariWindow = () => {
           return errors;
         }}
         onSubmit={(values, { setSubmitting }) => {
+          setButtonLoading(true);
           setTimeout(() => {
             sendEmail(values);
             setSubmitting(false);
           }, 400);
         }}
       >
-        {(props) => (
-          <Form>
-            <Field name="name">
-              {({ field, form }) => (
-                <FormControl isInvalid={form.errors.name && form.touched.name}>
-                  <FormLabel>Full name</FormLabel>
-                  <Input {...field} id="name" />
-                  <FormErrorMessage>{form.errors.name}</FormErrorMessage>
-                </FormControl>
-              )}
-            </Field>
-            <Field name="subject">
-              {({ field, form }) => (
-                <FormControl defaultValue="Portfolio Contact">
-                  <FormLabel>Subject</FormLabel>
-                  <Input {...field} id="subject" />
-                </FormControl>
-              )}
-            </Field>
-            <Field name="email">
-              {({ field, form }) => (
-                <FormControl
-                  isInvalid={form.errors.email && form.touched.email}
+        {() => (
+          <Flex px={5} pt={5} width="100%" height="100%" flexDir="column">
+            <Form>
+              <Field name="name">
+                {({ field, form }) => (
+                  <FormControl
+                    isInvalid={form.errors.name && form.touched.name}
+                  >
+                    <FormLabel>Full name</FormLabel>
+                    <Input {...field} id="name" />
+                  </FormControl>
+                )}
+              </Field>
+              <Field name="subject">
+                {({ field, form }) => (
+                  <FormControl defaultValue="Portfolio Contact">
+                    <FormLabel>Subject</FormLabel>
+                    <Input {...field} id="subject" />
+                  </FormControl>
+                )}
+              </Field>
+              <Field name="email">
+                {({ field, form }) => (
+                  <FormControl
+                    isInvalid={form.errors.email && form.touched.email}
+                  >
+                    <FormLabel>Email address</FormLabel>
+                    <Input {...field} id="email" />
+                  </FormControl>
+                )}
+              </Field>
+              <Field name="message">
+                {({ field, form }) => (
+                  <FormControl
+                    isInvalid={form.errors.message && form.touched.message}
+                  >
+                    <FormLabel>Message</FormLabel>
+                    <Input {...field} id="message" />
+                  </FormControl>
+                )}
+              </Field>
+              <Flex justifyContent="space-between" textAlign={"left"}>
+                <Text
+                  ml={2}
+                  mt={4}
+                  textColor={
+                    buttonSuccess
+                      ? "green.500"
+                      : buttonError
+                      ? "red.500"
+                      : "#00A3ff"
+                  }
                 >
-                  <FormLabel>Email address</FormLabel>
-                  <Input {...field} id="email" />
-                  <FormErrorMessage>{form.errors.email}</FormErrorMessage>
-                </FormControl>
-              )}
-            </Field>
-            <Field name="message">
-              {({ field, form }) => (
-                <FormControl
-                  isInvalid={form.errors.message && form.touched.message}
+                  {buttonSuccess
+                    ? "Your message has been sent!"
+                    : buttonError
+                    ? "There was an error sending your message."
+                    : ""}
+                </Text>
+                <Button
+                  w={100}
+                  mt={4}
+                  bgColor={
+                    buttonSuccess
+                      ? "green.400"
+                      : buttonError
+                      ? "red.400"
+                      : "blue.400"
+                  }
+                  color="whiteAlpha.900"
+                  type="submit"
+                  _hover={{
+                    bgColor: buttonSuccess
+                      ? "green.500"
+                      : buttonError
+                      ? "red.500"
+                      : "#00A3ff",
+                  }}
                 >
-                  <FormLabel>Message</FormLabel>
-                  <Input {...field} id="message" />
-                  <FormErrorMessage>{form.errors.message}</FormErrorMessage>
-                </FormControl>
-              )}
-            </Field>
-            <Button
-              mt={4}
-              bgColor="#007AFF"
-              color="whiteAlpha.900"
-              type="submit"
-              _hover={{ bgColor: "#00A3ff" }}
-            >
-              Submit
-            </Button>
-          </Form>
+                  {buttonLoading ? (
+                    <Spinner />
+                  ) : buttonSuccess ? (
+                    "Sent!"
+                  ) : buttonError ? (
+                    "Error"
+                  ) : (
+                    "Send"
+                  )}
+                </Button>
+              </Flex>
+            </Form>
+          </Flex>
         )}
       </Formik>
     </Box>

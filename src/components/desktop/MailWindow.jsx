@@ -2,14 +2,21 @@ import React, { useEffect, useContext } from "react";
 import { DesktopContext } from "./DesktopDisplay";
 import { Box, Flex } from "@chakra-ui/react";
 import { GithubRepoCard } from "./GithubRepoCard";
-import { SiTypescript, SiSwift, SiReact, SiFirebase, SiJavascript } from "react-icons/si";
-import { FaCircle } from "react-icons/fa";
+import { TaskbarButtons } from "./TaskbarButtons";
+import {
+  SiTypescript,
+  SiSwift,
+  SiReact,
+  SiFirebase,
+  SiJavascript,
+} from "react-icons/si";
 
-export const FinderWindow = () => {
-  const { zIndexes, handleSetAsTopScreen } = useContext(DesktopContext);
+export const MailWindow = () => {
+  const { zIndexes, handleSetAsTopScreen, setShowMail } =
+    useContext(DesktopContext);
 
   useEffect(() => {
-    handleSetAsTopScreen("finder");
+    handleSetAsTopScreen("mail");
   }, []);
   return (
     <Box
@@ -21,25 +28,15 @@ export const FinderWindow = () => {
       mr={"200px"}
       boxShadow="dark-lg"
       position={"absolute"}
-      zIndex={zIndexes["finder"]}
-      onClick={() => handleSetAsTopScreen("finder")}
+      zIndex={zIndexes["mail"]}
+      onClick={() => handleSetAsTopScreen("mail")}
       resize="both"
       overflow={"auto"}
       gap={1.5}
       flexDir={"column"}
       display={"flex"}
     >
-      <Flex
-        justifyContent="flex-start"
-        alignItems="center"
-        direction={"row"}
-        gap={2}
-        mb={5}
-      >
-        <FaCircle color="#d9515d" size={16} />
-        <FaCircle color="#f4c025" size={16} />
-        <FaCircle color="#3fc930" size={16} />
-      </Flex>
+      <TaskbarButtons setWindowOpenFunction={setShowMail} />
       <GithubRepoCard
         repoSubPath="snapshot-frontend"
         repoName="Snapshot Frontend"

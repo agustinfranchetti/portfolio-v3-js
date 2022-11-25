@@ -23,14 +23,6 @@ export const GithubRepoCard = ({
         <Link fontSize={"lg"} fontWeight={"bold"} href={`https://github.com/agustinfranchetti/${repoSubPath}`} isExternal>
           {repoName} <Icon as={FiExternalLink} />
         </Link>
-        {/* <Text
-          typeof="link"
-          href={`github.com/agustinfranchetti/${repoSubPath}`}
-          fontSize={"lg"}
-          fontWeight="bold"
-        >
-          {repoName}
-        </Text> */}
         <Text fontSize="sm" color="gray.500">
           {repoDescription}
         </Text>

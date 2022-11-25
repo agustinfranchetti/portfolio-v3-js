@@ -1,18 +1,16 @@
-import React, { useState, createContext, useEffect } from "react";
+import React, { useState, createContext } from "react";
 import { Flex, Grid, GridItem, Stack, Image } from "@chakra-ui/react";
-import { AboutMe } from "./AboutMe";
 import { PortfolioTerminal } from "./PortfolioTerminal";
 import { SafariWindow } from "./SafariWindow";
-import { FinderWindow } from "./FinderWindow";
+import { MailWindow } from "./MailWindow";
 
 const buttonMacIconDict = {
   terminal:
     "https://res.cloudinary.com/dw4okqkrq/image/upload/v1665098778/portfolio-macos-ios/terminal_hbdjv9.png",
   socialMedia:
     "https://res.cloudinary.com/dw4okqkrq/image/upload/v1669236648/portfolio-macos-ios/02cd7ad94a71a0097ae1d9ee12eb1519_Mail_512x512x32_w1sw7y.webp",
-  finder:
-    "https://res.cloudinary.com/dw4okqkrq/image/upload/v1669236851/portfolio-macos-ios/ea5080d827c0e306fc9f7233ea45cb1e_Github_Desktop_512x512x32_caoaan.webp",
-  };
+  mail: "https://res.cloudinary.com/dw4okqkrq/image/upload/v1669236851/portfolio-macos-ios/ea5080d827c0e306fc9f7233ea45cb1e_Github_Desktop_512x512x32_caoaan.webp",
+};
 
 export const DesktopContext = createContext({});
 
@@ -39,11 +37,11 @@ const ShowcontentButton = ({ iconLabel, showVariable, setShowVariable }) => {
 export const DesktopDisplay = () => {
   const [showTerminal, setShowTerminal] = useState(true);
   const [showSocialMedia, setShowSocialMedia] = useState(false);
-  const [showFinder, setShowFinder] = useState(false);
+  const [showMail, setShowMail] = useState(false);
   const [zIndexes, setZIndexes] = useState({
     terminal: 0,
     safari: 0,
-    finder: 0,
+    mail: 0,
   });
 
   const handleSetAsTopScreen = (screen) => {
@@ -58,6 +56,9 @@ export const DesktopDisplay = () => {
       value={{
         zIndexes,
         handleSetAsTopScreen,
+        setShowTerminal,
+        setShowSocialMedia,
+        setShowMail,
       }}
     >
       <Grid
@@ -91,9 +92,9 @@ export const DesktopDisplay = () => {
               setShowVariable={setShowSocialMedia}
             />
             <ShowcontentButton
-              iconLabel="finder"
-              showVariable={showFinder}
-              setShowVariable={setShowFinder}
+              iconLabel="mail"
+              showVariable={showMail}
+              setShowVariable={setShowMail}
             />
           </Stack>
         </GridItem>
@@ -108,7 +109,7 @@ export const DesktopDisplay = () => {
           display="flex"
         >
           {showTerminal && <PortfolioTerminal />}
-          {showFinder && <FinderWindow />}
+          {showMail && <MailWindow />}
         </GridItem>
         <GridItem colSpan={2}></GridItem>
         <GridItem colSpan={2} />
