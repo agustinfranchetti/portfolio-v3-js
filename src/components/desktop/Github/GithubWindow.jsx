@@ -1,8 +1,8 @@
 import React, { useEffect, useContext } from "react";
-import { DesktopContext } from "./DesktopDisplay";
-import { Box, Flex } from "@chakra-ui/react";
+import { DesktopContext } from "../DesktopDisplay";
+import { Box } from "@chakra-ui/react";
 import { GithubRepoCard } from "./GithubRepoCard";
-import { TaskbarButtons } from "./TaskbarButtons";
+import { TaskbarButtons } from "../TaskbarButtons";
 import {
   SiTypescript,
   SiSwift,
@@ -11,12 +11,12 @@ import {
   SiJavascript,
 } from "react-icons/si";
 
-export const MailWindow = () => {
-  const { zIndexes, handleSetAsTopScreen, setShowMail } =
+export const GithubWindow = () => {
+  const { zIndexes, handleSetAsTopScreen, setShowGithub } =
     useContext(DesktopContext);
 
   useEffect(() => {
-    handleSetAsTopScreen("mail");
+    handleSetAsTopScreen("github");
   }, []);
   return (
     <Box
@@ -28,15 +28,15 @@ export const MailWindow = () => {
       mr={"200px"}
       boxShadow="dark-lg"
       position={"absolute"}
-      zIndex={zIndexes["mail"]}
-      onClick={() => handleSetAsTopScreen("mail")}
+      zIndex={zIndexes["github"]}
+      onClick={() => handleSetAsTopScreen("github")}
       resize="both"
       overflow={"auto"}
       gap={1.5}
       flexDir={"column"}
       display={"flex"}
     >
-      <TaskbarButtons setWindowOpenFunction={setShowMail} />
+      <TaskbarButtons setWindowOpenFunction={setShowGithub} />
       <GithubRepoCard
         repoSubPath="snapshot-frontend"
         repoName="Snapshot Frontend"

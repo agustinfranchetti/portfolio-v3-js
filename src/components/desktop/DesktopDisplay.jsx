@@ -1,15 +1,15 @@
 import React, { useState, createContext } from "react";
-import { Flex, Grid, GridItem, Stack, Image } from "@chakra-ui/react";
+import { Flex, Grid, GridItem, Stack, Image, Text } from "@chakra-ui/react";
 import { PortfolioTerminal } from "./PortfolioTerminal";
-import { SafariWindow } from "./SafariWindow";
-import { MailWindow } from "./MailWindow";
+import { MailWindow } from "./Mail/MailWindow";
+import { GithubWindow } from "./Github/GithubWindow";
 
 const buttonMacIconDict = {
   terminal:
     "https://res.cloudinary.com/dw4okqkrq/image/upload/v1665098778/portfolio-macos-ios/terminal_hbdjv9.png",
-  socialMedia:
-    "https://res.cloudinary.com/dw4okqkrq/image/upload/v1669236648/portfolio-macos-ios/02cd7ad94a71a0097ae1d9ee12eb1519_Mail_512x512x32_w1sw7y.webp",
-  mail: "https://res.cloudinary.com/dw4okqkrq/image/upload/v1669236851/portfolio-macos-ios/ea5080d827c0e306fc9f7233ea45cb1e_Github_Desktop_512x512x32_caoaan.webp",
+  mail: "https://res.cloudinary.com/dw4okqkrq/image/upload/v1669236648/portfolio-macos-ios/02cd7ad94a71a0097ae1d9ee12eb1519_Mail_512x512x32_w1sw7y.webp",
+  github:
+    "https://res.cloudinary.com/dw4okqkrq/image/upload/v1669236851/portfolio-macos-ios/ea5080d827c0e306fc9f7233ea45cb1e_Github_Desktop_512x512x32_caoaan.webp",
 };
 
 export const DesktopContext = createContext({});
@@ -36,11 +36,11 @@ const ShowcontentButton = ({ iconLabel, showVariable, setShowVariable }) => {
 
 export const DesktopDisplay = () => {
   const [showTerminal, setShowTerminal] = useState(true);
-  const [showSocialMedia, setShowSocialMedia] = useState(false);
+  const [showGithub, setShowGithub] = useState(false);
   const [showMail, setShowMail] = useState(false);
   const [zIndexes, setZIndexes] = useState({
     terminal: 0,
-    safari: 0,
+    github: 0,
     mail: 0,
   });
 
@@ -57,7 +57,7 @@ export const DesktopDisplay = () => {
         zIndexes,
         handleSetAsTopScreen,
         setShowTerminal,
-        setShowSocialMedia,
+        setShowGithub,
         setShowMail,
       }}
     >
@@ -87,19 +87,19 @@ export const DesktopDisplay = () => {
               setShowVariable={setShowTerminal}
             />
             <ShowcontentButton
-              iconLabel="socialMedia"
-              showVariable={showSocialMedia}
-              setShowVariable={setShowSocialMedia}
-            />
-            <ShowcontentButton
               iconLabel="mail"
               showVariable={showMail}
               setShowVariable={setShowMail}
             />
+            <ShowcontentButton
+              iconLabel="github"
+              showVariable={showGithub}
+              setShowVariable={setShowGithub}
+            />
           </Stack>
         </GridItem>
         <GridItem rowSpan={1} colSpan={4}>
-          {showSocialMedia && <SafariWindow />}
+          {showMail && <MailWindow />}
         </GridItem>
         <GridItem
           rowSpan={3}
@@ -109,11 +109,21 @@ export const DesktopDisplay = () => {
           display="flex"
         >
           {showTerminal && <PortfolioTerminal />}
-          {showMail && <MailWindow />}
+          {showGithub && <GithubWindow />}
         </GridItem>
         <GridItem colSpan={2}></GridItem>
         <GridItem colSpan={2} />
         <GridItem colSpan={4} />
+        <Text
+          color="white"
+          position="absolute"
+          bottom="10px"
+          right="10px"
+          fontFamily={"monospace"}
+          fontSize={"sm"}
+        >
+          {"Created with <3 by Agustin Franchetti "}
+        </Text>
       </Grid>
     </DesktopContext.Provider>
   );
