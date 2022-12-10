@@ -45,7 +45,7 @@ export const rowIconsDict = {
   export const iconLinksDict = {
     linkedin: "https://www.linkedin.com/in/agustinfranchetti/",
     github: "https://github.com/agustinfranchetti",
-    twitter: "https://twitter.com/franchoDev",
+    twitter: "https://twitter.com/agusfranchetti",
     instagram: "https://www.instagram.com/agustinfranchetti/",
     location: "https://maps.app.goo.gl/RCgGNTJzQK569CKo7?g_st=ic",
     discord: "https://discord.com/users/@me/248162868854259713",
