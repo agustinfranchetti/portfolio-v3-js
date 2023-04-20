@@ -1,52 +1,32 @@
 export const welcomeText = `
-Hi, im agustin, a software developer from argentina.
-I like to code in react, nodejs, and python.
-I also like to play videogames, read manga, and learn about
-space, blockchain, and AI.
+Hi, I'm Agustin, a software developer from Argentina.
+I'm currently working as a full-stack freelance developer.
 `;
 
-export const commandsText = `
-Here are some useful commands:
-- socials: clickable links to my socials / contact info
-- resume: link to my resume
-- help: shows this message
-- clear: clears the terminal
-`;
-
-export const psText = `
-Try visiting this website from a mobile device 👀
+export const aboutText = `
+I also like to play video games, read manga, and learn about
+space, and AI.
 `;
 
 export const socialsLinks = [
   {
-    label: "github",
+    label: "GitHub",
     url: "https://github.com/agustinfranchetti",
   },
   {
-    label: "linkedin",
+    label: "LinkedIn",
     url: "https://linkedin.com/in/agustinfranchetti",
   },
   {
-    label: "twitter",
-    url: "https://twitter.com/franchodev",
+    label: "Twitter",
+    url: "https://twitter.com/agusfranchetti",
   },
   {
-    label: "instagram",
+    label: "Instagram",
     url: "https://instagram.com/agustinfranchetti",
   },
   {
-    label: "gmail",
+    label: "Gmail",
     url: "mailto: agustinfranchetti@gmail.com",
-  },
-];
-
-export const resumeLinks = [
-  {
-    download_text: "click para ver en español",
-    url: "https://drive.google.com/file/d/1-71urLTINOT-UwZMkmekDXWqcPIH_FP-/view?usp=sharing",
-  },
-  {
-    download_text: "click to view in english",
-    url: "https://drive.google.com/file/d/1Qf8oPmgVsJG39zWvm0Uuv3-7NyqXyR6y/view?usp=sharing",
   },
 ];
