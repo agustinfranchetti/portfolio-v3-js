@@ -18,7 +18,7 @@ import {
 
 function App() {
   return (
-    <Center h="100vh" w="100vw" bg="gray.900" color={"white"} p={5}>
+    <Center h="$100vh" w="100vw" bg="gray.900" color={"white"} p={5}>
       <VStack spacing={10}>
         <Image
           // src={profileImage}
