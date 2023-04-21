@@ -17,6 +17,7 @@ import {
   aboutText,
 } from "./utils/portfolioTerminalUtils";
 import { FaGithub, FaLinkedin, FaTwitter, FaInstagram } from "react-icons/fa";
+import { SiGmail } from "react-icons/si";
 
 function App() {
   const socialIcons = {
@@ -24,10 +25,11 @@ function App() {
     linkedin: FaLinkedin,
     twitter: FaTwitter,
     instagram: FaInstagram,
+    gmail: SiGmail,
   };
 
   return (
-    <Center h="$100vh" w="100vw" bg="gray.900" color={"white"} p={5}>
+    <Center height={"$100vh"} w="100vw" bg="gray.900" color={"white"} p={5}>
       <Stack
         w="100%"
         h="100%"
