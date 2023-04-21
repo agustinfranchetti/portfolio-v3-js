@@ -11,22 +11,22 @@ space, and AI.
 export const socialsLinks = [
   {
     label: "GitHub",
-    url: "https://github.com/agustinfranchetti",
+    url: "https://github.com/yourusername",
+    icon: "github",
   },
   {
     label: "LinkedIn",
-    url: "https://linkedin.com/in/agustinfranchetti",
+    url: "https://www.linkedin.com/in/yourusername/",
+    icon: "linkedin",
   },
   {
     label: "Twitter",
-    url: "https://twitter.com/agusfranchetti",
+    url: "https://twitter.com/yourusername",
+    icon: "twitter",
   },
   {
     label: "Instagram",
-    url: "https://instagram.com/agustinfranchetti",
-  },
-  {
-    label: "Gmail",
-    url: "mailto: agustinfranchetti@gmail.com",
+    url: "https://www.instagram.com/yourusername/",
+    icon: "instagram",
   },
 ];
