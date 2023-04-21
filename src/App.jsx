@@ -15,16 +15,24 @@ import {
   socialsLinks,
   aboutText,
 } from "./utils/portfolioTerminalUtils";
+import { FaGithub, FaLinkedin, FaTwitter, FaInstagram } from "react-icons/fa";
 
 function App() {
+  const socialIcons = {
+    github: FaGithub,
+    linkedin: FaLinkedin,
+    twitter: FaTwitter,
+    instagram: FaInstagram,
+  };
+
   return (
     <Center h="$100vh" w="100vw" bg="gray.900" color={"white"} p={5}>
-      <VStack spacing={10}>
+      <VStack spacing={10} w="90%" maxW="800px">
         <Image
           // src={profileImage}
           src="https://pbs.twimg.com/profile_images/1646594561991495696/WtagBHrB_400x400.jpg"
           alt="Agustin Franchetti"
-          boxSize="200px"
+          boxSize={["100%", "100%", "200px", "200px"]}
           borderRadius="full"
           objectFit="cover"
         />
@@ -45,19 +53,23 @@ function App() {
           gap={4}
           display={"flex"}
           flexDir={"row"}
+          justifyContent="center"
         >
-          {socialsLinks.map((link, index) => (
-            <Link
-              key={index}
-              href={link.url}
-              isExternal
-              fontWeight="bold"
-              color="blue.500"
-              _hover={{ textDecoration: "underline" }}
-            >
-              {link.label}
-            </Link>
-          ))}
+          {socialsLinks.map((link, index) => {
+            const IconComponent = socialIcons[link.icon];
+            return (
+              <Link
+                key={index}
+                href={link.url}
+                isExternal
+                fontWeight="bold"
+                color="blue.500"
+                _hover={{ textDecoration: "underline" }}
+              >
+                <IconComponent size="1.5em" />
+              </Link>
+            );
+          })}
         </Grid>
       </VStack>
     </Center>
