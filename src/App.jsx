@@ -8,6 +8,8 @@ import {
   Link,
   Grid,
   Divider,
+  Box,
+  Stack,
 } from "@chakra-ui/react";
 import {
   welcomeText,
@@ -26,12 +28,18 @@ function App() {
 
   return (
     <Center h="$100vh" w="100vw" bg="gray.900" color={"white"} p={5}>
-      <VStack w="90%" maxW="800px" spacing={5}>
+      <Stack
+        w="100%"
+        h="100%"
+        justifyContent="center"
+        alignItems="center"
+        gap={5}
+      >
         <Image
           // src={profileImage}
           src="https://pbs.twimg.com/profile_images/1646594561991495696/WtagBHrB_400x400.jpg"
           alt="Agustin Franchetti"
-          boxSize={"50%"}
+          boxSize={["150px", "200px", "250px", "300px"]}
           borderRadius="full"
           objectFit="cover"
         />
@@ -70,7 +78,7 @@ function App() {
             );
           })}
         </Grid>
-      </VStack>
+      </Stack>
     </Center>
   );
 }
