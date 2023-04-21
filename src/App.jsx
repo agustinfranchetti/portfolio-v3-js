@@ -26,16 +26,18 @@ function App() {
 
   return (
     <Center h="$100vh" w="100vw" bg="gray.900" color={"white"} p={5}>
-      <VStack spacing={10} w="90%" maxW="800px">
+      <VStack w="90%" maxW="800px" spacing={5}>
         <Image
           // src={profileImage}
           src="https://pbs.twimg.com/profile_images/1646594561991495696/WtagBHrB_400x400.jpg"
           alt="Agustin Franchetti"
-          boxSize={["100%", "100%", "200px", "200px"]}
+          boxSize={"50%"}
           borderRadius="full"
           objectFit="cover"
         />
-        <Heading size="2xl">Agustin Franchetti</Heading>
+        <Heading size="2xl" textAlign="center">
+          Agustin Franchetti
+        </Heading>
         <Text fontSize="xl" fontStyle="italic">
           Software Developer
         </Text>
@@ -45,8 +47,6 @@ function App() {
         <Text fontSize="md" textAlign="center">
           {aboutText}
         </Text>
-
-        <Divider />
         <Grid
           templateColumns="repeat(auto-fit, minmax(100px, 1fr))"
           gap={4}
